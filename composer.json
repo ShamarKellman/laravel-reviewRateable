@@ -1,12 +1,12 @@
 {
-    "name": "trexology/reviewrateable",
-    "description": "Rating syetem for Laravel 5",
+    "name": "shamarkellman/reviewrateable",
+    "description": "Rating system for Laravel 5",
     "keywords": ["rating", "Ratable", "laravel", "ReviewRateable", "reviewable"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Trex Lim",
-            "email": "trexlim@gmail.com"
+            "name": "Shamar Kellman",
+            "email": "shamarkellman@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -16,7 +16,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Trexology\\ReviewRateable\\": "src/"
+            "ShamarKellman\\ReviewRateable\\": "src/"
         }
+    },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ShamarKellman\\ReviewRateable\\AuthLoggerServiceProvider"
+      ]
     }
+  }
 }

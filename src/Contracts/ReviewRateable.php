@@ -1,6 +1,6 @@
 <?php
 
-namespace Trexology\ReviewRateable\Contracts;
+namespace ShamarKellman\ReviewRateable\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,26 +13,27 @@ interface ReviewRateable
 
     /**
      *
-     * @return mix
+     * @param null $round
+     * @return mixed
      */
-    public function averageRating($round= null);
+    public function averageRating($round = null);
 
     /**
      *
-     * @return mix
+     * @return mixed
      */
     public function countRating();
 
     /**
      *
-     * @return mix
+     * @return mixed
      */
     public function sumRating();
 
     /**
      * @param $max
      *
-     * @return mix
+     * @return mixed
      */
     public function ratingPercent($max = 5);
 

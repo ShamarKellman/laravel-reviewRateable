@@ -1,6 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/trexology/reviewrateable/v/stable)](https://packagist.org/packages/trexology/reviewrateable)
-[![Total Downloads](https://poser.pugx.org/trexology/reviewrateable/downloads)](https://packagist.org/packages/trexology/reviewrateable)
-[![Latest Unstable Version](https://poser.pugx.org/trexology/reviewrateable/v/unstable)](https://packagist.org/packages/trexology/reviewrateable) [![License](https://poser.pugx.org/trexology/reviewrateable/license)](https://packagist.org/packages/trexology/reviewrateable)
+[![Latest Stable Version](https://poser.pugx.org/shamarkellman/reviewrateable/v/stable)](https://packagist.org/packages/shamarkellman/reviewrateable)
+[![Total Downloads](https://poser.pugx.org/shamarkellman/reviewrateable/downloads)](https://packagist.org/packages/shamarkellman/reviewrateable)
+[![Latest Unstable Version](https://poser.pugx.org/shamarkellman/reviewrateable/v/unstable)](https://packagist.org/packages/shamarkellman/reviewrateable) [![License](https://poser.pugx.org/shamarkellman/reviewrateable/license)](https://packagist.org/packages/shamarkellman/reviewrateable)
 
 # Laravel ReviewRateable
 ReviewRateable system for laravel 5
@@ -9,21 +9,21 @@ ReviewRateable system for laravel 5
 
 First, pull in the package through Composer.
 
-```js
-composer require trexology/reviewrateable
+```bash
+composer require shamarkellman/reviewrateable
 ```
 
 And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    Trexology\ReviewRateable\ReviewRateableServiceProvider::class
+    ShamarKellman\ReviewRateable\ReviewRateableServiceProvider::class
 ];
 ```
 
 At last you need to publish and run the migration.
-```
-php artisan vendor:publish --provider="Trexology\ReviewRateable\ReviewRateableServiceProvider" && php artisan migrate
+```php
+php artisan vendor:publish --provider="ShamarKellman\ReviewRateable\ReviewRateableServiceProvider" && php artisan migrate
 ```
 
 -----
@@ -34,8 +34,8 @@ php artisan vendor:publish --provider="Trexology\ReviewRateable\ReviewRateableSe
 
 namespace App;
 
-use Trexology\ReviewRateable\Contracts\ReviewRateable;
-use Trexology\ReviewRateable\Traits\ReviewRateable as ReviewRateableTrait;
+use ShamarKellman\ReviewRateable\Contracts\ReviewRateable;
+use ShamarKellman\ReviewRateable\Traits\ReviewRateable as ReviewRateableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model implements ReviewRateable

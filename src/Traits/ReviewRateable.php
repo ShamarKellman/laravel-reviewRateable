@@ -1,8 +1,8 @@
 <?php
 
-namespace Trexology\ReviewRateable\Traits;
+namespace ShamarKellman\ReviewRateable\Traits;
 
-use Trexology\ReviewRateable\Models\Rating;
+use ShamarKellman\ReviewRateable\Models\Rating;
 use Illuminate\Database\Eloquent\Model;
 
 trait ReviewRateable
@@ -16,10 +16,10 @@ trait ReviewRateable
     }
 
     /**
-     *
-     * @return mix
+     * @param null $round
+     * @return \Illuminate\Support\Collection
      */
-    public function averageRating($round= null)
+    public function averageRating($round = null)
     {
       if ($round) {
             return $this->ratings()
@@ -34,7 +34,7 @@ trait ReviewRateable
 
     /**
      *
-     * @return mix
+     * @return \Illuminate\Support\Collection
      */
     public function countRating(){
       return $this->ratings()
@@ -44,7 +44,7 @@ trait ReviewRateable
 
     /**
      *
-     * @return mix
+     * @return \Illuminate\Support\Collection
      */
     public function sumRating()
     {
@@ -54,9 +54,9 @@ trait ReviewRateable
     }
 
     /**
-     * @param $max
+     * @param int $max
      *
-     * @return mix
+     * @return float|int
      */
     public function ratingPercent($max = 5)
     {
@@ -68,10 +68,10 @@ trait ReviewRateable
 
     /**
      * @param $data
-     * @param Model      $author
+     * @param Model $author
      * @param Model|null $parent
      *
-     * @return static
+     * @return Rating
      */
     public function rating($data, Model $author, Model $parent = null)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Trexology\ReviewRateable\Models;
+namespace ShamarKellman\ReviewRateable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +14,7 @@ class Rating extends Model
     /**
      * @var array
      */
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['id', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
@@ -30,6 +30,15 @@ class Rating extends Model
     public function author()
     {
         return $this->morphTo('author');
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeApproved($query)
+    {
+        return $query->where('status', true);
     }
 
     /**
@@ -74,5 +83,23 @@ class Rating extends Model
     public function deleteRating($id)
     {
         return static::find($id)->delete();
+    }
+    
+    /**
+     *
+     * @return boolean
+     */
+    public function approveRating($id)
+    {
+        return $this->status = true;
+    }
+
+    /**
+     *
+     * @return boolean
+     */
+    public function isApproved()
+    {
+        return $this->status;
     }
 }

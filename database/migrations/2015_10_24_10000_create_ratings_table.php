@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -12,6 +13,7 @@ class CreateRatingsTable extends Migration
             $table->integer('rating');
             $table->string('title');
             $table->string('body');
+            $table->boolean('status')->default(false);
             $table->morphs('reviewrateable');
             $table->morphs('author');
             $table->timestamps();
