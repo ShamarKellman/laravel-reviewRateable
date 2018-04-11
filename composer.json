@@ -22,7 +22,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "ShamarKellman\\ReviewRateable\\AuthLoggerServiceProvider"
+        "ShamarKellman\\ReviewRateable\\ReviewRateableServiceProvider"
       ]
     }
   }
